@@ -1,0 +1,14 @@
+set serveroutput on;
+DECLARE
+na integer :=0;
+BEGIN
+Select count(*)
+into na
+from DONATES
+where crop='Arugula';
+if (na > 0) then 
+DBMS_OUTPUT.PUT_LINE('There have been a total of ' || na || ' donations with arugula.');
+else
+	DBMS_OUTPUT.PUT_LINE('No arugula has been donated.');
+end if;
+END;
