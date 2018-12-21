@@ -1,0 +1,22 @@
+create table growers (
+    id number not null unique,
+    name varchar2(30) not null,
+    phone number not null,
+    email varchar2(50),
+    address varchar2(50),
+    affiliate_name varchar2(50),
+    location_name varchar2(50),
+    FOREIGN KEY (id) REFERENCES donates(id)
+);
+
+insert into growers 
+values (1,'Ben Harrison',5013474453,'benjamin@sproutlr.com','2109 Center, 
+    Little Rock, AR','Sprout','CSUH');
+    
+insert into growers    
+values (10,'Jimmy Parks',5015554444,'norgi@gmail.com','4321 Parks Dr',
+    'Common Roots','The Promise Garden');
+    
+insert into growers
+values (100,'Sarah Facen',5015553333,'sarah@gmail.com','4321 Facen Dr',null,
+    'Home');
