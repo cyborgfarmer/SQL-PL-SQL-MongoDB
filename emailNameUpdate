@@ -1,6 +1,6 @@
-*/ This query piggybacks onto the previous query 
+/* This query piggybacks onto the previous query 
 (pantryTriggers) and updates the contact name and 
-email of the selected tuple from the Pantry table. /*
+email of the selected tuple from the Pantry table. */
 
 update pantry
 set contact = 'Scharmel', email = 'scharmel@yahoo.com'
