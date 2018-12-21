@@ -1,0 +1,30 @@
+/* This query pulls the quantity of produce (in pounds) 
+donated to any specified pantry. It will likely be the 
+case that it is best to use one standard unit of 
+measurement, such as pounds, rather than including 
+ounces and such as well. Even though this may be 
+slightly more challenging on the data entry side of the 
+operation, it will prove much easier to discover this 
+kind of information. */
+
+set serveroutput on;
+DECLARE
+na integer :=0;
+nb varChar2(50);
+
+BEGIN
+Select count (*) quantity
+into na
+from DONATES
+where pantry_id = 1;
+select pantry_name
+into nb
+from PANTRY
+where pantry_id = 1;
+
+    if (na > 0) then 
+DBMS_OUTPUT.PUT_LINE('There have been a total of ' || na || ' pounds donated to ' || nb || '.');
+    else
+        DBMS_OUTPUT.PUT_LINE('There have been no donations.');
+    end if;
+END;
