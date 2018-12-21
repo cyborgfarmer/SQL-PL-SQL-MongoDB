@@ -1,0 +1,21 @@
+/* This trigger fires when a pantry’s contact information is updated. 
+It creates a new table called “PanUpdates” and provides a framework 
+for updating the contact name and email. */
+
+drop trigger pantry_deleteTrigger; 
+drop table PanUpdates;
+create table PanUpdates (  
+newContact varChar2(50), 
+oldContact varChar2(50), 
+newEmail varChar2(50),
+oldEmail varChar2(50), 
+delDate date
+);
+
+create or replace trigger pantry_deleteTrigger 
+BEFORE update on pantry for each row
+
+BEGIN
+insert into PanUpdates values (
+:new.contact, :old.contact, :new.Email, :old.email, sysdate);
+END;
