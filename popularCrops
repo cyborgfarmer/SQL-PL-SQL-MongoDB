@@ -1,4 +1,4 @@
-*/ This query uses a loop and 2 arrays to count 
+/* This query uses a loop and 2 arrays to count 
 the number of times each crop has been donated. */
 
 set serveroutput on;
