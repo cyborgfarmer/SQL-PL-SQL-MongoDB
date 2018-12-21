@@ -1,3 +1,7 @@
+/* This query is intended to inform the analyst of 
+how many donations included a particular crop. */
+
+
 set serveroutput on;
 DECLARE
 na integer :=0;
