@@ -1,3 +1,5 @@
+/* This code generates and populates the PANTRY table. */
+
 create table pantry (
     pantry_id number not null unique,
     phone number not null unique,
