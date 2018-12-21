@@ -1,0 +1,22 @@
+set serveroutput on;
+DECLARE
+type cropCount is varray(8) of  integer;
+cpcnt cropCount;
+type crop is varray(8) of VARCHAR2(30);
+cp crop;
+cnt number;
+BEGIN
+cpcnt := cropCount(0,0,0,0,0,0,0,0);
+cp  :=  crop('Arugula','Spinach','Turnips','Sweet Potatoes','Bell Peppers', 	
+'Basil', 'Onions', 'Turnips Greens');
+cnt := cp.count;
+        
+for i in 1..cnt loop
+select count(*)
+       	into cpcnt(i)
+        	from DONATES
+        	where crop = cp(i);
+        	dbms_output.put_line('The crop ' || cp(i) || ' has been donated ' 
+        	|| cpcnt(i) || ' times ');
+      end loop;
+END;
