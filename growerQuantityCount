@@ -1,0 +1,26 @@
+/* This query pulls the all-time quantity of produce 
+donated by Sarah Facen. Another challenge would be 
+to confine the numbers to a period of time. */
+
+set serveroutput on;
+
+DECLARE
+na integer :=0;
+nb varChar2(30);
+BEGIN
+Select count (*) quantity
+into na
+from DONATES
+where id = 100;
+
+select name
+into nb
+from GROWERS
+where id = 100;
+
+    if (na > 0) then 
+        DBMS_OUTPUT.PUT_LINE('Grower ' || nb || ' has donated a total of ' || na || ' pounds of produce.');
+    else
+        DBMS_OUTPUT.PUT_LINE('' || nb || ' has made no donations.');
+    end if;
+END;
