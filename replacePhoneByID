@@ -1,3 +1,6 @@
+/* This cursor formula selects a tuple based on 
+the grower’s ID# and replaces their phone number. */
+
 Create procedure update_Phone (ID in growers.ID%type, new_Phone in 
 growers.phone%type) as 
 new_phone number;
