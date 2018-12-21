@@ -1,0 +1,18 @@
+Create procedure update_Phone (ID in growers.ID%type, new_Phone in 
+growers.phone%type) as 
+new_phone number;
+    
+DECLARE
+    cursor c1 is
+        select * from growers
+        for update;
+        c1_rec c1%rowtype;
+BEGIN
+        for c1_rec in c1 loop
+        if (c1_rec.ID = 1) then
+            update growers
+            set phone = 4172620688
+            where current of c1;
+        end if;
+    end loop;
+END;
