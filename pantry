@@ -1,0 +1,25 @@
+create table pantry (
+    pantry_id number not null unique,
+    phone number not null unique,
+    contact varchar2(50),
+    email varchar2(50),
+    pantry_name varchar2(50) not null,
+    address varchar2(50)
+    FOREIGN KEY (pantry_id) REFERENCES donates(pantry_id)
+);
+
+insert into pantry 
+values (1,5011234567,'Emily','emily@yahoo.com','SW Church Pantry', 
+    '4417 S Street');
+    
+insert into pantry    
+values (2,501987654,'John','john@yahoo.com','NW Shelter Pantry',
+    '321 North St.');
+    
+insert into pantry
+values (3,5015556666,'Marjorie','marjorie@yahoo.com','SE Garner Church Pantry',
+    '8888 Billow Street');
+
+insert into pantry
+values (4,5015559898,'Brittany','brittany@gmail.com','Neighbors That Love',
+    '2121 Hampton Rd.');
