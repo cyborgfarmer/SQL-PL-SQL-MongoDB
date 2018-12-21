@@ -1,0 +1,33 @@
+create table donates (
+    id number not null,
+    donationId number not null unique,
+    crop varchar2(30) not null,
+    quantity number not null,
+    unitOfMeasurement varchar2(10) not null,
+    donationDate date not null,
+    pantryId number,
+    FOREIGN KEY (pantry_id) REFERENCES pantry(pantry_id)
+);
+
+insert into donates 
+values (1,11,'Arugula',2,'pounds',08-APR-18,1);
+insert into donates    
+values (1,12,'Spinach',6,'pounds',11-APR-18,2);    
+insert into donates
+values (1,13,'Turnips',10,'pounds',15-APR-18,1);
+insert into donates
+values (1,14,'Arugula',3,'pounds',18-APR-18,3);
+insert into donates 
+values (100,1001,'Sweet Potatoes',2,'pounds',08-APR-18,3);    
+insert into donates    
+values (100,1002,'Sweet Potatoes',2,'pounds',08-APR-18,4);
+insert into donates
+values (100,1003,'Sweet Potatoes',2,'pounds',08-APR-18,3);
+insert into donates
+values (100,1004,'Bell Peppers',2,'pounds',15-APR-18,2);
+insert into donates
+values (10,111,'Basil',.75,'pounds',08-APR-18,4);
+insert into donates
+values (10,123,'Onions',3,'pounds',11-APR-18,1);
+insert into donates
+values (10,134,'Turnip Greens',17,'bunches',11-APR-18,1);
