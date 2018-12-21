@@ -1,4 +1,4 @@
-*/ This code generates and populates the DONATES table. */
+/* This code generates and populates the DONATES table. */
 
 create table donates (
     id number not null,
