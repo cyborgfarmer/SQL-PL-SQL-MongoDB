@@ -1,0 +1,10 @@
+/* This trigger prevents anyone from deleting a tuple from 
+the table PANTRY and raises an application error. */
+
+	create or replace trigger pantry_deleteTrigger BEFORE delete on pantry
+for each row
+
+BEGIN
+raise_application_error(-20001,'Failed operation. Unauthorized deletion of tuples 
+in PANTRY table');
+END;
